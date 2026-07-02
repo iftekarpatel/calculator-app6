@@ -1,5 +1,8 @@
+
 from calc_func import add, subtract,divide
 from calc_multiply import multiply
+from calc_areaofrectangle import area_of_rectangle
+
 
 def main():
     print("""Select the function from the given options:
@@ -7,8 +10,10 @@ def main():
     2. Subtract
     3. Multiply
     4. Divide
+    5. Area of Rectangle
+
     """)
-    choice = input("Enter your choice (1/2/3/4): ")
+    choice = input("Enter your choice (1/2/3/4/5): ")
 
     if choice == "1":
         a = float(input("Enter the first number: "))
@@ -29,6 +34,10 @@ def main():
             print(f"The result is: {divide(a, b)}")
         except ValueError as e:
             print(f"Error: {e}")
+    elif choice == "5":
+        length = float(input("Enter the length: "))
+        width = float(input("Enter the width: "))
+        print(f"The result is: {area_of_rectangle(length, width)}")
     else:
         print("Invalid choice.")
 
